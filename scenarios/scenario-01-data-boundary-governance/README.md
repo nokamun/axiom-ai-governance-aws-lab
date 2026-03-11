@@ -1,4 +1,5 @@
 # Scenario 1 – Data Boundary Governance
+Data Governance | Least Privilege | Monitoring Controls
 
 ## Objective
 Demonstrate how governance controls restrict an AI assistant to approved knowledge sources while preventing access to sensitive internal data.
