@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowPublicResearch",
+            "Effect": "Allow",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::driftlock-ai-knowledge-lab-east1/*",
+            "Condition": {
+                "StringEquals": {
+                    "s3:ExistingObjectTag/data-classification": "public-research"
+                }
+            }
+        },
+        {
+            "Sid": "DenySensitiveData",
+            "Effect": "Deny",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::driftlock-ai-knowledge-lab-east1/*",
+            "Condition": {
+                "StringEquals": {
+                    "s3:ExistingObjectTag/data-classification": "sensitive"
+                }
+            }
+        }
+    ]
+}
