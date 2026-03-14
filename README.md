@@ -1,4 +1,4 @@
-# AI Governance AWS Lab
+# AXIOM AI Governance AWS Lab
 
 **AI Governance | Security Architecture | Data Protection | Cloud Security**
 
