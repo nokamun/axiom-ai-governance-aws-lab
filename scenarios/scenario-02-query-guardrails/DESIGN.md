@@ -259,7 +259,7 @@ experience for legitimate queries.
                              │
                              ▼
               ┌──────────────────────────────┐
-              │    Bedrock Guardrails         │
+              │    Bedrock Guardrails        │
               │                              │
               │  Topic check → BLOCK?        │
               │  ├── YES → redirect silently │
@@ -275,9 +275,9 @@ experience for legitimate queries.
                     ┌────────┴────────┐
                     │                 │
               ┌─────▼──────┐   ┌─────▼──────┐
-              │  Bedrock   │   │ CloudWatch  │
-              │ Knowledge  │   │   Metrics   │
-              │    Base    │   │  + Alarms   │
+              │  Bedrock   │   │ CloudWatch │
+              │ Knowledge  │   │   Metrics  │
+              │    Base    │   │  + Alarms  │
               └─────┬──────┘   └─────┬──────┘
                     │                │
                     │         ┌──────▼──────┐
@@ -287,9 +287,9 @@ experience for legitimate queries.
                     │         └─────────────┘
                     │
               ┌─────▼──────┐
-              │  S3 Vectors │
-              │ (knowledge  │
-              │   store)    │
+              │ S3 Vectors │
+              │ (knowledge │
+              │   store)   │
               └────────────┘
 
 Amazon Macie (independent)
