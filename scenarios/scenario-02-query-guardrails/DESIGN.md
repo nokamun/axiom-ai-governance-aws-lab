@@ -473,6 +473,48 @@ Mitigation:  Bedrock Guardrails provides second layer of PII
              Defense in depth — two independent PII controls
 ```
 
+### Risk 6 — Semantic Retrieval Leakage
+```
+Risk:        Vector similarity search surfaces sensitive content
+             in response to a legitimate query because semantic
+             relevance crosses document boundaries unexpectedly
+
+             Example:
+             Query:    "What AI tools does the company offer?"
+             Result:   Vector search finds pricing document
+                       because it mentions AI products
+             Outcome:  Pricing details returned even though
+                       user never asked about pricing
+
+Impact:      Sensitive data returned without a sensitive query
+             Topic blocking does not trigger because the
+             query itself contains no sensitive keywords
+             The governance failure is invisible to the user
+
+Why it happens:
+             Traditional database  → returns exactly what was asked
+             Vector similarity     → returns what seems relevant
+                                     relevance is based on meaning
+                                     not exact keyword match
+                                     the AI decides what is relevant
+
+Mitigation:  Scoped ingestion (Scenario 01)
+             Sensitive documents never enter vector store
+             Pricing document was never ingested
+             Cannot be retrieved because it does not exist
+
+             Response PII scanning (Scenario 02)
+             Bedrock Guardrails scans every response
+             for sensitive patterns before user sees it
+             Catches leakage even when topic blocking
+             does not trigger
+
+             Defense in depth is the correct answer
+             No single control fully prevents semantic
+             retrieval leakage — layered controls catch
+             what individual layers miss
+```
+
 ---
 
 ## 8. What Success Looks Like
