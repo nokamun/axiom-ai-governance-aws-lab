@@ -3,7 +3,7 @@ import json
 
 bedrock = boto3.client('bedrock-agent-runtime', region_name='us-east-1')
 
-KNOWLEDGE_BASE_ID = '2FC12FO9Q8'
+KNOWLEDGE_BASE_ID = 'YOUR_KNOWLEDGE_BASE_ID'
 MODEL_ARN = 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0'
 
 def lambda_handler(event, context):
