@@ -18,6 +18,7 @@ Timeout:  60 seconds (Bedrock calls can take 10-30 seconds)
 
 Production notes:
     - Update GUARDRAIL_ID with actual guardrail ID
+    - Update YOUR_KNOWLEDGE_BASE_ID with actual knowledge base ID
     - WAF attachment to API Gateway recommended for production
     - SNS notification on alarm recommended for production
 """
@@ -32,7 +33,7 @@ logger.setLevel(logging.INFO)
 bedrock = boto3.client('bedrock-agent-runtime', region_name='us-east-1')
 cloudwatch = boto3.client('cloudwatch', region_name='us-east-1')
 
-KNOWLEDGE_BASE_ID = '2FC12FO9Q8'
+KNOWLEDGE_BASE_ID = 'YOUR_KNOWLEDGE_BASE_ID'
 MODEL_ARN = 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0'
 GUARDRAIL_ID = 'your-guardrail-id'
 GUARDRAIL_VERSION = 'DRAFT'
